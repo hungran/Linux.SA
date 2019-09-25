@@ -7,4 +7,4 @@
  
 ### Booting and SMD
  **- Quy trình khởi động:**
- <img src="https://imgur.com/XjpWlE0">
+ <img src="https://imgur.com/XjpWlE0.img">
