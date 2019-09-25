@@ -37,5 +37,5 @@ daemons started. These procedures are managed by a series of shell scripts (some
 	or on ubuntu
 	'**/efi/ubuntu/grubx64.efi
 	- show config boot
-		'**efibootmgr -v**'
+		''**efibootmgr -v**''
 		
