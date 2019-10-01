@@ -90,6 +90,39 @@ Viết tắt của service, chứa các service của hệ thống liên quan đ
 ## 2.5 File Atribute (thuộc tính của file)
 Các thuộc tính của file có nhiệm vụ kiểm soát xem ai có quyền đọc, ghi và thực thi. 
 Cùng tìm hiểu ví dụ dưới để hiểu rõ hơn về thuộc tính của file
+Vd ta chạy lệnh **ls -l** tại /home/ubuntu
+Kết quả như sau:
+<img src="https://imgur.com/cl7tPlu.jpg">
+ 
+Ý nghĩa:
+ - File Access Permission: drwxrwxr-x 
+ - số liên kết: 2
+ - Chủ sở hữu: ubuntu
+ - Nhóm: ubuntu
+ - File Size (bytes): 4096
+ - Lần hiệu chỉnh cuối cùng: Oct 1 13:50
+ - File name: hung20191001.txt
+Lệnh `ls -l` còn cho ta biết các thông tin như sau:
+- Kí tự đầu tiên d thì đối tượng là thư mục, như ở ví dụ trên hung20191001.txt là 1 thư mục
+- Kí tự đầu tiên là (-) thì là tập tin
+- Kí tự đầu tiên là l, đây là liên kết mềm
+- Kí tự đầu tiên là b, đối tượng là block device vd: disk drive
+- Kí tự đầu tiên là c, đối tượng là character device vd: serial port
+Để thay đổi quyền sở hữu ta dùng lệnh `chown`
+ta xem ví dụ như dưới:
+
+<img src="https://imgur.com/DQPRhUK.jpg">
+
+Đổi quyền sở hữu cho group **group1** ta làm theo hướng dẫn như hình
+
+<img src="https://imgur.com/2avg66A.jpg">
+
+Trong trường hợp muốn chuyển quyền sở hữu cho toàn bộ thư mục và các tập tin bên trong thì thực hiện lệnh `chown -R`
+
+Thay đổi quyền đọc ghi và thực thi ta sử dụng lệnh `chmod`
+
+Thông tin của chmod 
+
 
 
  
