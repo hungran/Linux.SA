@@ -88,4 +88,4 @@ VD: `systemctl start mysql`
 
 Dưới đây là bảng so sánh phân cấp và target giữa `init` và `systemd`.
 
-	<img src="https://imgur.com/zIpjznT.jpg">
+<img src="https://imgur.com/zIpjznT.jpg">
