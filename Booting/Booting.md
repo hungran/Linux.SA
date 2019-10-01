@@ -3,7 +3,7 @@
  
  <img src="https://imgur.com/XjpWlE0.jpg">
  Mặc dù đây là quy trình tiêu chuẩn cho bất kì hệ thống Linux nào tuy nhiên cũng đã có sự thay đổi khi các hệ thống di chuyển lên các dịch vụ điện toán đám mây, container. Các quản trị viên có thể quản lý quá trình này bằng một số công cụ hình ảnh, API, bảng điều khiển thay vì chạm vào phần cứng vật lý.
- Để dễ hình dung các bước ta có bảng như sau:
+ **Để dễ hình dung các bước ta có bảng như sau:**
  
   |Bước|   |
   | --- | --- |
