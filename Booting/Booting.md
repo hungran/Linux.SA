@@ -20,7 +20,7 @@
   | Bước 11 | Hệ thống chạy |
   
    
- ** BIOS / UEFI (system firmware)
+ ** BIOS / UEFI (system firmware) **
  Khi một máy tính Linux được bật, việc đầu tiên CPU sẽ thực thi các dòng lệnh được chứa trong ROM (bộ nhớ chỉ đọc)
  Chương trình này được gọi là `system firmware`, `system firmware` trong hệ thống linux truyền thống được biết đến là `BIOS`.
  Với BIOS ta có thể hiểu đây là chương trình cổ điển được nạp sẵn trong bo mạch chủ của máy tính (ví dụ: NVRAM).
@@ -55,7 +55,7 @@
   + GRUB cũng có các dòng lệnh cơ bản như bảng dưới cho phép ta nhập khi quá trình này diễn ra
  <img src="https://imgur.com/lA7WiAN.jpg">
  
-- ** The UEFI path
+- ** The UEFI path **
   + Khác với BIOS dùng boot loader như GRUB, hệ thống UEFI tạo phân vùng EFI và cài đặt các đoạn mã khởi động theo đường dẫn mặc định là /boot/bootx64.efi
   + Với hệ thống sử dụng phương pháp EFI / UEFI, phần mềm UEFI đọc dữ liệu trình quản lý khởi động để xác định ứng dụng UEFI nào sẽ được khởi chạy và từ nơi nào.
   + Trong trạng thái đầu tiên, UEFI boot loader tìm phần vùng và nạp chương trình gọi là `UEFI loader` từ /boot/loader.efi .  Đến đây quy trình lại tương tự như với hệ thống BIOS sử dụng bootloader là GRUB
