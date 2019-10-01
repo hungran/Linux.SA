@@ -86,5 +86,6 @@ bảng dưới
 - `systemctl` là lệnh dùng để quản lý (bắt đầu, dừng, tải lại, kiểm tra trạng thái,... của dịch vụ nói cách khác `systemctl` là ứng dụng kiểm soát các dịch vụ của hệ thống\
 VD: `systemctl start mysql`
 
-Dưới đây là bảng so sánh phân cấp và target giữa `init` và `systemd`
- <img src="https://imgur.com/zIpjznT.jpg">
+Dưới đây là bảng so sánh phân cấp và target giữa `init` và `systemd`.
+
+	<img src="https://imgur.com/zIpjznT.jpg">
