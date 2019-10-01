@@ -81,7 +81,7 @@ Sau khi qua trình tải và nạp nhân thành công, máy tính sẽ chạy ti
 - Để thay thế cho `init`, `systemd` với nhiều tính năng hơn được sử dụng phổ biết cho các hệ thống linux.
 - `systemd` cũng là tiến trình đầu tiên trên hệ thống với ID = 1
 - `systemd` có đầy đủ các tính năng như `init` không chỉ quản lý các tiến trình song song mà còn quản lý kết nối mạng `networkd`, kernel log `journald` và logins `logind`
-- `systemd` sử dụng mục tiêu thay vì runlevel như `init`. Có 2 mục tiêu chính là multi-user.target và graphical.target
+- `systemd` sử dụng mục tiêu thay vì runlevel như `init`. Có 2 mục tiêu chính là `multi-user.target` và `graphical.target`.
 bảng dưới 
 - `systemctl` là lệnh dùng để quản lý (bắt đầu, dừng, tải lại, kiểm tra trạng thái,... của dịch vụ nói cách khác `systemctl` là ứng dụng kiểm soát các dịch vụ của hệ thống\
 VD: `systemctl start mysql`
