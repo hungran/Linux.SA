@@ -119,9 +119,41 @@ ta xem ví dụ như dưới:
 
 Trong trường hợp muốn chuyển quyền sở hữu cho toàn bộ thư mục và các tập tin bên trong thì thực hiện lệnh `chown -R`
 
-Thay đổi quyền đọc ghi và thực thi ta sử dụng lệnh `chmod`
+Thay đổi quyền đọc ghi và thực thi ta sử dụng lệnh `chmod`. Với một file hoặc thư mục, hệ thống sẽ sử dụng 3 octal để định nghĩa quyền cho các file và thư mục này
+Mỗi octal lại có 3 bits thập phân và được diễn giải như bảng dưới:
 
-Thông tin của chmod 
+| Octal | Binary | Perms | Octal | Binary | Perms |
+| --- | --- | --- | --- | --- | --- |
+| 0 | 000 | `---` | 4 | 100 | `r--` |
+| 1 | 001 | `--x` | 5 | 101 | `r-x` |
+| 2 | 010 | `-w-` | 6 | 110 | `rw-` |
+| 3 | 011 | `-wx` | 7 | 111 | `rwx` |
+
+
+Octal đầu tiên sẽ định nghĩa quyền của chủ sở hữu, octal thứ hai cho group và octal cuối cùng cho everyone
+
+Ta theo dõi ví dụ bên dưới
+Ví dụ ta trao quyền 711 cho **hung20191001**
+ta thực hiện như sau:
+
+<img src="https://imgur.com/z7uQEVb.jpg">
+
+Kết quả `drwx--x--x` có nghĩa chủ sở hữu có quyền đọc ghi và thực thi, trong khi nhóm sở hữu và everyone chỉ có quyền thực thi 
+Ngoài ra ta có thể set quyền theo syntax như bảng dưới
+
+| Spec | Meaning |
+| --- | --- |
+| u+w | Thêm quyền ghi cho chủ sở hữu |
+| ug=rw,o=r | Trao quyền đọc ghi cho chủ sở hữu và nhóm, đọc cho everyone |
+| a-x | Gỡ quyền thực thi cho tất cả các loại (từ sở hữu đến everyone)
+| ug=srx,o= | Trao quyền đọc và thực thi chỉ cho chủ sở hữu và nhóm |
+| g=u | Trao quyền cho nhóm giống như quyền của chủ sở hữu |
+
+- Tương tự như `chown`, với `chmod` ta có thêm lựa chọn -R để gán quyền cho toàn bộ file hoặc thư mục bên trong.
+- `chown` và `chgrp`: trao quyền cho chủ sở hữu và nhóm sở hữu. (đọc ví dụ trên)
+
+** unmask **
+
 
 
 
