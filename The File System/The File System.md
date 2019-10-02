@@ -21,7 +21,7 @@
 - Ngược lại khi muốn gỡ `filesystems` ra khỏi hệ thống ta sử dụng lệnh `unmount`
  - lênh `unmount -l` không cho phép filesystem được unmount mà phải đợi khi file này thực sự được đóng lại. 
  - lệnh `unmount f` cho phép unmount `filesystem` được gắn với tiến trình đang chạy.
-- Tham số của lệnh mount và file /etc/fstab tương tự, có một số lưu ý như dưới:
+- Tham số của lệnh mount và file /etc/fstab tương tự.
 - Thiết bị không có trong /etc/fstab chỉ root mới mount được.
 ## 2.3 ORGANIZATION OF THE FILE TREE (Tổ chức sắp xếp cây thư mục)
 Danh sách các thư mục thông thường được nhìn thấy dưới thư mục gốc (`/`) 
@@ -132,13 +132,13 @@ Mỗi octal lại có 3 bits thập phân và được diễn giải như bảng
 
 Octal đầu tiên sẽ định nghĩa quyền của chủ sở hữu, octal thứ hai cho group và octal cuối cùng cho everyone
 
-Ta theo dõi ví dụ bên dưới
-Ví dụ ta trao quyền 711 cho **hung20191001**
-ta thực hiện như sau:
+Ta theo dõi ví dụ bên dưới.
+Ví dụ ta trao quyền 711 cho **hung20191001** ta thực hiện như sau:
 
 <img src="https://imgur.com/z7uQEVb.jpg">
 
-Kết quả `drwx--x--x` có nghĩa chủ sở hữu có quyền đọc ghi và thực thi, trong khi nhóm sở hữu và everyone chỉ có quyền thực thi 
+Kết quả `drwx--x--x` có nghĩa chủ sở hữu có quyền đọc ghi và thực thi, trong khi nhóm sở hữu và everyone chỉ có quyền thực thi.
+ 
 Ngoài ra ta có thể set quyền theo syntax như bảng dưới
 
 | Spec | Meaning |
@@ -149,10 +149,11 @@ Ngoài ra ta có thể set quyền theo syntax như bảng dưới
 | ug=srx,o= | Trao quyền đọc và thực thi chỉ cho chủ sở hữu và nhóm |
 | g=u | Trao quyền cho nhóm giống như quyền của chủ sở hữu |
 
-- Tương tự như `chown`, với `chmod` ta có thêm lựa chọn -R để gán quyền cho toàn bộ file hoặc thư mục bên trong.
+- Tương tự như `chown`, với `chmod` ta có thêm lựa chọn `-R` để gán quyền cho toàn bộ file hoặc thư mục bên trong.
 - `chown` và `chgrp`: trao quyền cho chủ sở hữu và nhóm sở hữu. (đọc ví dụ trên)
 
 ** unmask **
+
 
 
 
