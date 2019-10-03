@@ -14,9 +14,9 @@ Ta có bảng kích thước file như dưới:
 | Zettabyte - ZB | 1024 EBs |
 | Yottabyte - YB | 1024 ZBs |
 
-## 2.1.1 Journaling (
-** Link tham khảo : https://en.wikipedia.org/wiki/Journaling_file_system
-** Link tham khảo : https://quantrimang.com/tim-hieu-khai-niem-co-ban-ve-he-thong-file-trong-linux-84900
+## 2.1.1 Journaling
+- ** Link tham khảo : https://en.wikipedia.org/wiki/Journaling_file_system
+- ** Link tham khảo : https://quantrimang.com/tim-hieu-khai-niem-co-ban-ve-he-thong-file-trong-linux-84900
 
 Một filesystem được gọi là journaling file system khi nó có thể theo dõi các thay đổi chưa được "cam kết" hay chưa được chính thức ghi vào đĩa cứng. Nó giống như một dạng nhật kí của file system có khả năng tự động đưa filesystem trở lại trạng thái bình thường khi có sự cố.
 Hiểu đơn giản quy trình của filesystem được lưu vào đĩa cứng như sau:
@@ -24,8 +24,8 @@ Hiểu đơn giản quy trình của filesystem được lưu vào đĩa cứng 
 2. journal ghi file vào đĩa cứng khi sẵn sàng.
 3. Sau khi ghi thành công, file sẽ được xóa khởi journal -> Quá trình hoàn tất
 
--> Do vậy khi xảy ra lỗi, hệ thống có thể kiểm tra lại journal với các thao tác còn lại trên journal (chưa hoàn tất)
-Nhược điểm: chiếm nhiều hiệu suất hơn với hệ thống filesystem không có tính năng journaling
+-> Do vậy khi xảy ra lỗi, hệ thống có thể kiểm tra lại journal với các thao tác còn lại trên journal (chưa hoàn tất).
+- Nhược điểm: chiếm nhiều hiệu suất hơn với hệ thống filesystem không có tính năng journaling
 
  
 ## 2.1.2 EXT2
