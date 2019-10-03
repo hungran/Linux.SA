@@ -46,13 +46,16 @@ Dưới đây là file system của 01 x ubuntu server aws_ec2
 - Bỏ qua root partition ta sẽ add thêm 1 aws_ebs cho con ec2 và được kết quả như sau:
 - Đường dẫn trên aws cho ec2 dev/sdf
 - Kết quả:
+
 <img src="https://imgur.com/MdpBp9F.jpg">
+
 - Ta thực hiện các bước sau để mount volume này vào ec2
 - Bước 1: (option) kiểm tra xem volume này đã có data hay chưa: 
 `sudo file -s /dev/xvdf`
 - Bước 2: format với định dạng ext2
 `sudo mkfs -t ext2 /dev/xvdf`
 - Kết quả :
+
 <img src="https://imgur.com/lbigl7Z.jpg">
 
 <img src="https://imgur.com/qtfx3X7.jpg">
