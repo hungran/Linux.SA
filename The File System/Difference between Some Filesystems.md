@@ -68,10 +68,10 @@ Dưới đây là file system của 01 x ubuntu server aws_ec2
 
 - Bước 5: Converting từ ext2 sang ext3 (bật tính năng Journaling)
 
-`tune2fs -j /dev/xvdf
+`tune2fs -j /dev/xvdf`
 - thêm entry vào /etc/fstab
 `/dev/xvdf       /hungvolume   ext3    defaults,nofail        0       0`
 - kết quả
 <img src="https://imgur.com/Dl1hZJt.jpg">
 
-** Tham khảo https://www.linux.com/tutorials/convert-ext2-ext3-file-system/ **
+** Tham khảo https://www.linux.com/tutorials/convert-ext2-ext3-file-system/ 
