@@ -42,36 +42,36 @@ Hiểu đơn giản quy trình của filesystem được lưu vào đĩa cứng 
 Dưới đây là file system của 01 x ubuntu server aws_ec2
 <img src="https://imgur.com/F5ve8DG.jpg">
 
-Filesystem ở đây là loại ext4
-Bỏ qua root partition ta sẽ add thêm 1 aws_ebs cho con ec2 và được kết quả như sau:
-Đường dẫn trên aws cho ec2 dev/sdf
-Kết quả:
+- Filesystem ở đây là loại ext4.
+- Bỏ qua root partition ta sẽ add thêm 1 aws_ebs cho con ec2 và được kết quả như sau:
+- Đường dẫn trên aws cho ec2 dev/sdf
+- Kết quả:
 <img src="https://imgur.com/MdpBp9F.jpg">
-Ta thực hiện các bước sau để mount volume này vào ec2
-Bước 1: (option) kiểm tra xem volume này đã có data hay chưa: 
+- Ta thực hiện các bước sau để mount volume này vào ec2
+- Bước 1: (option) kiểm tra xem volume này đã có data hay chưa: 
 `sudo file -s /dev/xvdf`
-Bước 2: format với định dạng ext2
+- Bước 2: format với định dạng ext2
 `sudo mkfs -t ext2 /dev/xvdf`
-Kết quả :
+- Kết quả :
 <img src="https://imgur.com/lbigl7Z.jpg">
 
 <img src="https://imgur.com/qtfx3X7.jpg">
 
-Bước 3: Tạo volume mới trên ubuntu ec2 bằng lệnh sau:
+- Bước 3: Tạo volume mới trên ubuntu ec2 bằng lệnh sau:
 `sudo mkdir /hungvolume`
 
-Bước 4: Mount volume với filesystem vừa format
+- Bước 4: Mount volume với filesystem vừa format
 `sudo mount /dev/xvdf /hungvolume`
-Kết quả:
+- Kết quả:
 
 <img src="https://imgur.com/h2hn3SS.jpg">
 
-Bước 5: Converting từ ext2 sang ext3 (bật tính năng Journaling)
+- Bước 5: Converting từ ext2 sang ext3 (bật tính năng Journaling)
 
 `tune2fs -j /dev/xvdf
-thêm entry vào /etc/fstab
+- thêm entry vào /etc/fstab
 `/dev/xvdf       /hungvolume   ext3    defaults,nofail        0       0`
-kết quả
+- kết quả
 <img src="https://imgur.com/Dl1hZJt.jpg">
 
 ** Tham khảo https://www.linux.com/tutorials/convert-ext2-ext3-file-system/ **
