@@ -2,6 +2,7 @@
 # Phân 2.1 So sánh giữa các loại FILESYSTEM phổ biến
 
 Ta có bảng kích thước file như dưới:
+
 | Tên | Kích thước |
 | --- | --- |
 | Kilobyte - KB | 1024 Bytes |
