@@ -22,6 +22,6 @@ https://en.wikipedia.org/wiki/Inode
 - Bảng chứa thông tin của thư mục cũng chứa thông tin "name" và số inode. 
 - Số inode luôn luôn là duy nhất trên từng phân vùng. 
 - Khi tao tạo hard link sẽ có 2 hoặc nhiều hơn "name" với cùng 1 file và cùng 1 số inode. Khi đổi tên hoặc di chuyển file có nghĩa ta đã tạo 1 entry bao gồm thông tin 'name" và số inode, tương tự như việc tạo một file mới, nó sẽ xóa entry cũ của bảng trong thư mục cũ.
-- Do vậy khi di chuyển 1 file lớn sẽ mất thời gian vì ta sẽ tạo mới đồng thời xóa entry "name" và số inode trong bảng phía trong thư mục.
+- Do vậy khi di chuyển 1 file lớn sẽ mất thời gian vì ta sẽ tạo mới và đồng thời xóa entry "name" và số inode trong bảng phía trong thư mục.
 - Ngược lại khi di chuyển hay đổi tên thư mục lại nhanh hơn mặc dù thư mục chứa rất nhiều nội dung.
 
