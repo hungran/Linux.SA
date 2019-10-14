@@ -30,13 +30,15 @@ https://www.linuxtrainingacademy.com/systemd-cheat-sheet/
 Ví dụ tạo service bằng shell script như sau:
 Ta tạo một vòng lặp:
 
-` DATE=`date '+%Y-%m-%d %H:%M:%S'`
+` 
+DATE=`date '+%Y-%m-%d %H:%M:%S'`
 echo "Vu Manh Hung Service start at ${DATE}" | systemd-cat -p info
 while :
 do
 echo "Looping...";
 sleep 1;
-done `
+done 
+`
 
 Lưu vào đường dẫn **/usr/bin/myservice**
 
