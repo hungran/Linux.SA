@@ -42,11 +42,11 @@ done
 
 Lưu vào đường dẫn **/usr/bin/myservice**
 
-<img src="https://imgur.com/lBE6Obw.img">
+<img src="https://imgur.com/lBE6Obw.jpg">
 
 Kiểm tra
 
-<img src="https://imgur.com/AbQ43Rm.img"
+<img src="https://imgur.com/AbQ43Rm.jpg"
 
 Tạo systemd service **hungservice.service** đường dẫn: */lib/systemd/system/hungservice.service*:
 
@@ -77,7 +77,4 @@ Kiểm tra
 
 ` sudo systemctl status myservice.service `
 
-<img src"https://imgur.com/mqrkoJQ.img">
-
-
-
+<img src"https://imgur.com/mqrkoJQ.jpg">
