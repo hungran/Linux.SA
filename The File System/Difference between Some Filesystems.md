@@ -97,8 +97,8 @@ Bây giờ ta thêm entry vào `/etc/fstab` như lệnh dưới:
 - Các thông tin trong `/etc/fstab`
 	- với vị dụ trên ta xem bên trong file `/etc/fstab`
 	- <img src="https://imgur.com/1M70CNQ.jpg">
-	- `/dev/xvdf` hay `LABEL=cloudimg-rootfs` là chỉ partition hoặc remote partition. Với ví dụ ở đây thì `LABEL=Cloudimg-rootfs` là phân vùng root từ AWS mặc định tạo sẵn khi chạy ubuntu EC2, phân vùng `/dev/xvdf` được tạo khi ta tạo AWS_EBS (1 dạng ổ đĩa trên cloud)
-	- `/` hay `/hungvolume2019` là thư mục được mount `ext4` hay `ext3` định dạng phân vùng.
+	- `/dev/xvdf` hay `LABEL=cloudimg-rootfs` là partition hoặc remote partition. Với ví dụ ở đây thì `LABEL=Cloudimg-rootfs` là phân vùng root từ AWS mặc định tạo sẵn khi chạy ubuntu EC2, phân vùng `/dev/xvdf` được tạo khi ta tạo AWS_EBS (1 dạng ổ đĩa trên cloud)
+	- `/` hay `/hungvolume2019` là thư mục được mount với định dạng phân vùng là `ext4` hay `ext3`.
 	- default là lựa chọn mặc định cài đặt, các cài đặt này được lưu trong file `/proc/mounts`, với mỗi các chuẩn filesystem khác nhau, mặc định sẽ có các lựa chọn khác nhau (xem ví dụ sau về các option
 , ngoài ra ta có các lựa chọn sau:
 		- async: Tất cả I/O đến filesystem được đồng bộ hóa
@@ -109,4 +109,4 @@ Bây giờ ta thêm entry vào `/etc/fstab` như lệnh dưới:
 		-
 	
 ** Tham khảo https://www.linux.com/tutorials/convert-ext2-ext3-file-system/ **
-
+** Tham khảo https://jlk.fjfi.cvut.cz/arch/manpages/man/mount.8#FILESYSTEM-INDEPENDENT_MOUNT_OPTIONS **
