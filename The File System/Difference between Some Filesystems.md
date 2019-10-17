@@ -81,7 +81,7 @@ Dưới đây là file system của 01 x ubuntu server aws_ec2
 
 #### Tìm hiểu về fstab
 - fstab là file được sử dụng để định nghĩa cách các phân vùng ổ đĩa, remote filesystem hay các block device được mount vào filesystem như thế nào
-- Mỗi filesystem được mô tả theo từng dòng riêng biệt. Trong qá trình boot, quá trình mount sẽ dựa trên file này, đọc lần lượt các dòng trong file này để mount các phân vùng.
+- Mỗi filesystem được mount như thế nào dựa vào từng dòng trong /etc/fstab. Trong qá trình boot, quá trình mount sẽ dựa trên file này, đọc lần lượt các dòng trong file này để mount các phân vùng.
 - Mặc định trước khi khởi chạy các dịch vụ cần thiết để mount filesystem, filesystem sẽ được "fsck" (filesystemcheck).
 - việc `mount` bản chất sẽ sử dụng cấu hình từ file `fstab`
 
@@ -92,7 +92,7 @@ Dưới đây là file system của 01 x ubuntu server aws_ec2
 Bây giờ ta thêm entry vào `/etc/fstab` như lệnh dưới:	
 - `/dev/xvdf       /hungvolume2019   ext3    defaults,nofail        0       0`
 - kết quả sau khi reboot
-<img src="https://imgur.com/OS11NBp.jpg">
+<img src="https://imgur.com/ctXO1kl.jpg">
 
 - Các thông tin trong `/etc/fstab`
 	- với vị dụ trên ta xem bên trong file `/etc/fstab`
