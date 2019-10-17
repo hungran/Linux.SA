@@ -44,7 +44,7 @@ Dưới đây là file system của 01 x ubuntu server aws_ec2
 
 - Filesystem ở đây là loại ext4.
 - Bỏ qua root partition ta sẽ add thêm 1 aws_ebs cho con ec2 và được kết quả như sau:
-- Đường dẫn trên aws cho ec2 dev/sdf
+- Đường dẫn trên aws cho ec2 dev/sdf, kiểm tra bằng lệnh `lsblk -f`
 - Kết quả:
 
 <img src="https://imgur.com/MdpBp9F.jpg">
@@ -72,9 +72,41 @@ Dưới đây là file system của 01 x ubuntu server aws_ec2
 - Bước 5: Converting từ ext2 sang ext3 (bật tính năng Journaling)
 
 `tune2fs -j /dev/xvdf`
-- thêm entry vào /etc/fstab
-`/dev/xvdf       /hungvolume   ext3    defaults,nofail        0       0`
-- kết quả
-<img src="https://imgur.com/Dl1hZJt.jpg">
+- Kết quả
+<img src="https://imgur.com/jEQMHIR.jpg">
 
-** Tham khảo https://www.linux.com/tutorials/convert-ext2-ext3-file-system/ 
+&
+
+<img src="https://imgur.com/Tbvw11i.jpg">
+
+#### Tìm hiểu về fstab
+- fstab là file được sử dụng để định nghĩa cách các phân vùng ổ đĩa, remote filesystem hay các block device được mount vào filesystem như thế nào
+- Mỗi filesystem được mô tả theo từng dòng riêng biệt. Trong qá trình boot, quá trình mount sẽ dựa trên file này, đọc lần lượt các dòng trong file này để mount các phân vùng.
+- Mặc định trước khi khởi chạy các dịch vụ cần thiết để mount filesystem, filesystem sẽ được "fsck" (filesystemcheck).
+- việc `mount` bản chất sẽ sử dụng cấu hình từ file `fstab`
+
+- Từ ví dụ ở phía trên, ta tạo thêm directory `/hungvolume2019`
+
+<img src="https://imgur.com/iJPqex9.jpg">
+
+Bây giờ ta thêm entry vào `/etc/fstab` như lệnh dưới:	
+- `/dev/xvdf       /hungvolume2019   ext3    defaults,nofail        0       0`
+- kết quả sau khi reboot
+<img src="https://imgur.com/OS11NBp.jpg">
+
+- Các thông tin trong `/etc/fstab`
+	- với vị dụ trên ta xem bên trong file `/etc/fstab`
+	- <img src="https://imgur.com/vrhtFy.jpg">
+	- `/dev/xvdf` hay `LABEL=cloudimg-rootfs` là chỉ partition hoặc remote partition. Với ví dụ ở đây thì `LABEL=Cloudimg-rootfs` là phân vùng root từ AWS mặc định tạo sẵn khi chạy ubuntu EC2, phân vùng `/dev/xvdf` được tạo khi ta tạo AWS_EBS (1 dạng ổ đĩa trên cloud)
+	- `/` hay `/hungvolume2019` là thư mục được mount `ext4` hay `ext3` định dạng phân vùng.
+	- default là lựa chọn mặc định cài đặt, các cài đặt này được lưu trong file `/proc/mounts`, với mỗi các chuẩn filesystem khác nhau, mặc định sẽ có các lựa chọn khác nhau (xem ví dụ sau về các option
+, ngoài ra ta có các lựa chọn sau:
+		- async: Tất cả I/O đến filesystem được đồng bộ hóa
+		- atime: không sử dụng tính năng **noatim**, do đó inode access time được điểu khiển bởi kernel mặc định
+		- noatime: Không cập nhật inode access times cho filesystem (vd: để truy cập vào news spoool nhanh hớn, tăng tốc news servers. Hoạt động ch tất cấc loại inodes
+		- auto: được mount với lựa chọn **-a**
+		- noauto: chỉ có thể mount khi có mọi tham số cụ thể.
+		-
+	
+** Tham khảo https://www.linux.com/tutorials/convert-ext2-ext3-file-system/ **
+
