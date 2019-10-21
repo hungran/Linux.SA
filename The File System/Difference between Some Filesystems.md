@@ -106,7 +106,6 @@ Bây giờ ta thêm entry vào `/etc/fstab` như lệnh dưới:
 		- noatime: Không cập nhật inode access times cho filesystem (vd: để truy cập vào news spoool nhanh hớn, tăng tốc news servers. Hoạt động ch tất cấc loại inodes
 		- auto: được mount với lựa chọn **-a**
 		- noauto: chỉ có thể mount khi có mọi tham số cụ thể.
-		-
-	
+		- Tham số context=/.kj78	
 ** Tham khảo https://www.linux.com/tutorials/convert-ext2-ext3-file-system/ **
 ** Tham khảo https://jlk.fjfi.cvut.cz/arch/manpages/man/mount.8#FILESYSTEM-INDEPENDENT_MOUNT_OPTIONS **
