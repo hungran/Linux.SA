@@ -20,6 +20,7 @@ Theo mô hình TCP/IP ta có bảng sau để phân biệt các tầng làm vi�
 
 ## IPv4 và IPv6
 [tham khảo](https://techdifferences.com/difference-between-ipv4-and-ipv6.html)
+### IPv4
 - Phiên bản IPv4 sử dụng 4-byte (32bits) trong data packet để đánh địa chỉ, chia làm 4 octa, mỗi octa có 8bits, sử dụng decimal
 Do vậy ipv4 có 4294967296 (2^32) addresses
 <img src="https://imgur.com/xb1JV2w.jpg">
@@ -52,11 +53,23 @@ Do vậy ipv4 có 4294967296 (2^32) addresses
 | 41 | IPv6 encapsulation |	ENCAP |
 | 89 | Open Shortest Path First |	OSPF | 
 | 132 | Stream Control Transmission Protocol | SCTP |	
+### IPv6
 
-- Phiên bản IPv6 sử dụng 16-byte, địa chỉ dưới dạng hexadecimal
-
+- Phiên bản IPv6 sử dụng 16-byte, địa chỉ dưới dạng hexadecimal (32 digits)
 <img src="https://imgur.com/IxzBgNB.jpg">
 
+- IPv6 Packet format:
+	- Trong Ipv6 các thông tin được đóng gói thành packet, gồm header (Ipv6) và payload
+Tham khảo bảng sau:	
+<img source="https://techdifferences.com/wp-content/uploads/2017/08/IPv6-datagram.jpg"
+
+- Base Header:
+	<img source="https://techdifferences.com/wp-content/uploads/2017/08/IPv6-datagram-format.jpg">
+	
+	- Version: 4 bit, tương tự như IPv4, trường này cung cấp thông tin version của IP
+	- Priority: 4 bits định nghĩa thứ tự ưu tiên của luồng thông tin
+	- Flow label: 24 bitss - có nhiệm vụ kiểm soát dữ liệu truyền đi
+	- Payload lenght: định nghĩa độ đài của IP datagram trừ base header.
 Ta có bảng so sánh như sau:
 
 | Basis of Comparison | IPv4 | IPv6 |
