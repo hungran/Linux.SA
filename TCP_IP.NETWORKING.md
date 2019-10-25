@@ -69,15 +69,15 @@ Theo mô hình TCP/IP ta có bảng sau để phân biệt các tầng làm vi�
 - IPv6 Packet format:
 	- Trong Ipv6 các thông tin được đóng gói thành packet, gồm header (Ipv6) và payload
 Tham khảo bảng sau:	
-<img source="https://techdifferences.com/wp-content/uploads/2017/08/IPv6-datagram.jpg"
+	<img src="https://techdifferences.com/wp-content/uploads/2017/08/IPv6-datagram.jpg"
 
 - Base Header:
-	<img source="https://techdifferences.com/wp-content/uploads/2017/08/IPv6-datagram-format.jpg">
+	<img src="https://techdifferences.com/wp-content/uploads/2017/08/IPv6-datagram-format.jpg">
 	
-	- Version: 4 bit, tương tự như IPv4, trường này cung cấp thông tin version của IP
-	- Priority: 4 bits định nghĩa thứ tự ưu tiên của luồng thông tin
-	- Flow label: 24 bitss - có nhiệm vụ kiểm soát dữ liệu truyền đi
-	- Payload lenght: định nghĩa độ đài của IP datagram trừ base header.
+		- Version: 4 bit, tương tự như IPv4, trường này cung cấp thông tin version của IP
+		- Priority: 4 bits định nghĩa thứ tự ưu tiên của luồng thông tin
+		- Flow label: 24 bitss - có nhiệm vụ kiểm soát dữ liệu truyền đi
+		- Payload lenght: định nghĩa độ đài của IP datagram trừ base header.
 - Ta có bảng so sánh như sau:
 
 | Basis of Comparison | IPv4 | IPv6 |
