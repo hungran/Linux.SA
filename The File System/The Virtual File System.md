@@ -48,3 +48,51 @@ Vd: file `/proc/sys/net/ipv4/ip_forward`  điểu khiển việc forward IP tron
 | `/proc/sys/net/ipv4/ip_ display` |  |
 | `/proc/sys/net/local_port_range` | the range of ports that Linux uses. |
 |`/proc/sys/net/ipv4/tcp_syncookies`| protection against syn flood attacks. |
+
+## Danh sách thư mục /proc
+
+- Khi liệu kê các file trong /proc, sẽ có nhiều thư mục có tên bắt đầu bằng số, các thư mục này chứa thông tin về các tiến trình đang chạy và giá trị số ở đây là PID.
+- Có  thể kiểm tra các tài nguyên đã tiêu thụ theo một process từ các thư mục này
+ví dụ:
+- <img src="https://imgur.com/O6TNj7y.jpg">
+- đây là những tiến trình chạy ở PID = 1
+- File /proc/1/exe laf symbolic link ddeesn /usr/lib/systemd/systemd
+## Ví dụ về /proc
+- Để bảo đảm server không bị tấn công flood SYN (tấn công qua cơ chế bắt tay), ta có thể sử dụng iptables để chặn gói SYN packets.
+- Ngoài ra có giải pháp tốt hơn là sử dụng **SYN cookies**. Đây là phương pháp đặc biệt trong nhân kernel để giữ, track các gói SYN Packets. Nếu SYN packet không chuyển đến trạng thái bắt tay trong một khoảng thời gian cho phép. Kernel sẽ drop chúng.
+- Thêm lệnh sau: `sysctl -w net.ipv4.tcp_syncookies=1`
+- Đưa vào sysctl.conf như sau: `$ echo "net.ipv4.tcp_syncookies = 1" >> /etc/sysctl.conf`
+
+<img src="https://imgur.com/4fcynJU.jpg">
+
+## sysfs Virtual File System
+- giống như virtual file system, sysfs được sử dụng trong memory.
+- sysfs nằm trong /sys. Sử dụng để lấy thông tin hardware
+
+<img src="https://imgur.com/MTH6Az9.jpg">
+
+Trong đó:
+- Block: Danh sách block devices được detect ví dụ như `sda` `nvme0n1`
+- Bus: Chứa thông tin physical bused trong kernel. Vd: serial, pci, cpu
+- class: Chứa thông tin các lớp như audio, network, printer.
+- Devices: Chứa thông tin các thiết bị được đăng kí với kernel bởi physical bus.
+- Module: Danh sách các module đã được loaded
+- Power: trạng thái của devices
+
+## tmpfs Virtual File System
+
+- Tương tự như các virtual file system khác, `tmpfs` file system được lấy từ một phần của RAM vật lý. Từ đây bạn có thể mount nó và sử dụng như 1 phân vùng ổ cứng.
+- /tmp file system được sử dụng làm vị trí lưu trữ cho các file tạm.
+- /tmp được hỗ trợ bởi bộ lưu trữ dựa trên đĩa thật chứ không phải hởi virtual
+Vị trí này được chọn trong quá trình cài đặt Linux
+- /tmp được tạo tự động bởi `systemd` khi khởi động.
+Có thể thiết lập filesystem kiểu tmpfs với kích thước mong muốn như lệnh `mount`
+
+- Cấu trúc như sau:
+- `mount -t [TYPE] -o size=[SIZE] [FSTYPE] [MOUNTPOINT]`
+
+- Trong đó:
+	- TYPE: Loại RAM Disk, ở đâu là tmpfs
+	- SIZE: Mức dung lượng sử dụng cho filesystem
+	- FSTYPE: Chuẩn format của filesystem
+	
