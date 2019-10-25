@@ -33,6 +33,7 @@ Vd: file `/proc/sys/net/ipv4/ip_forward`  điểu khiển việc forward IP tron
 ## Các file en try phổ biến trong /proc
 
 | Name | Description |
+| --- | --- |
 | `/proc/cpuinfo` | Thông tin của CPU|
 | `/proc/meminfo`| thông tin usage của memory|
 | `/proc/ioports` | list of port regions used for I/O communication with devices. |
@@ -49,12 +50,14 @@ Vd: file `/proc/sys/net/ipv4/ip_forward`  điểu khiển việc forward IP tron
 | `/proc/sys/net/local_port_range` | the range of ports that Linux uses. |
 |`/proc/sys/net/ipv4/tcp_syncookies`| protection against syn flood attacks. |
 
+
 ## Danh sách thư mục /proc
 
 - Khi liệu kê các file trong /proc, sẽ có nhiều thư mục có tên bắt đầu bằng số, các thư mục này chứa thông tin về các tiến trình đang chạy và giá trị số ở đây là PID.
 - Có  thể kiểm tra các tài nguyên đã tiêu thụ theo một process từ các thư mục này
 ví dụ:
-- <img src="https://imgur.com/O6TNj7y.jpg">
+ <img src="https://imgur.com/O6TNj7y.jpg">
+
 - đây là những tiến trình chạy ở PID = 1
 - File /proc/1/exe laf symbolic link ddeesn /usr/lib/systemd/systemd
 ## Ví dụ về /proc
