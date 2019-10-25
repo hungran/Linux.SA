@@ -24,14 +24,16 @@ Theo mô hình TCP/IP ta có bảng sau để phân biệt các tầng làm vi�
 ### IPv4
 - Phiên bản IPv4 sử dụng 4-byte (32bits) trong data packet để đánh địa chỉ, chia làm 4 octa, mỗi octa có 8bits, sử dụng decimal
 - Do vậy ipv4 có 4294967296 (2^32) addresses
+
 	<img src="https://imgur.com/xb1JV2w.jpg">
 
-	<src img="https://techdifferences.com/wp-content/uploads/2017/08/IPv4-datagram.jpg">
+	<src src="https://techdifferences.com/wp-content/uploads/2017/08/IPv4-datagram.jpg">
 
 - Packet Format 
 		- Một IPv4 datagram các thông tin để định tuyến và truyền thông tin
 		- Packer Format bao gồm 2 phần là header 20 bytes và data với giá trị có thể lên đến 65,536 cùng với header.
-- Trong Header chứa các trường sau
+- Trong Header chứa các trường sau:
+
 		- Version: 4 bits, định nghĩa phiên bản của giao thức IP
 		- Header Lenght (HLEN): 4 bits, mô tả chiều dài, kích  thước của header 
 		- Service type 8 bits: Mô tả loại dịch vụ, throughput, reliability and delay
@@ -45,6 +47,7 @@ Theo mô hình TCP/IP ta có bảng sau để phân biệt các tầng làm vi�
 		- Source address: 4 byte, xác định nguồn của datagram
 		- Destination address: 4 byte, xác định đích của datagram
 		- Options: thường không được sử dụng, nhiệm vụ thêm một số chức năng cho IP datagram. 
+
 - Data
 		- bản thông tin về các giao thức:
 
