@@ -80,14 +80,15 @@ Tham khảo bảng sau:
 		- Priority: 4 bits định nghĩa thứ tự ưu tiên của luồng thông tin
 		- Flow label: 24 bitss - có nhiệm vụ kiểm soát dữ liệu truyền đi
 		- Payload lenght: định nghĩa độ đài của IP datagram trừ base header.
+
 - Ta có bảng so sánh như sau:
 
 | Basis of Comparison | IPv4 | IPv6 |
-| --- | --- | --- | --- |
+| --- | --- | --- |
 | Address Configuration | Support Manual and DHCP configuration | Support Auto-configuration and renumbering |
 | End-to-end connection integrity |	Unachievable | Achievable |
-| Address Space |	It can generate 4.29 x 109 addresses. | It can produce quite a large number of addresses, i.e., 3.4 x 1038. |
-| Security features |	Security is dependent on application | IPSEC is inbuilt in the IPv6 protocol |
+| Address Space | It can generate 4.29 x 109 addresses. | It can produce quite a large number of addresses, i.e., 3.4 x 1038. |
+| Security features | Security is dependent on application | IPSEC is inbuilt in the IPv6 protocol |
 | Address length | 32 bits (4 bytes) | 128 bits (16 bytes) |
 | Address Representation | In decimal | In hexadecimal |
 | Fragmentation performed by | Sender and forwarding routers | Only by the sender |
@@ -95,4 +96,3 @@ Tham khảo bảng sau:
 | Checksum | Field Available | Not available |
 | Message Transmission Scheme | Broadcasting | Multicasting and Anycasting |
 | Encryption and Authentication | Not Provided | Provided |
-
