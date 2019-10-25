@@ -34,10 +34,10 @@ Vd: file `/proc/sys/net/ipv4/ip_forward`  điểu khiển việc forward IP tron
 
 | Name | Description |
 | --- | --- |
-| `/proc/cpuinfo` | Thông tin của CPU|
-| `/proc/meminfo`| thông tin usage của memory|
+| `/proc/cpuinfo` | Thông tin của CPU |
+| `/proc/meminfo`| thông tin usage của memory |
 | `/proc/ioports` | list of port regions used for I/O communication with devices. |
-| `/proc/mdstat` | display the status of RAID disks configuration.|
+| `/proc/mdstat` | display the status of RAID disks configuration. |
 | `/proc/kcore` | displays the system actual memory. |
 | `/proc/modules` | displays a list of kernel loaded modules. |
 | `/proc/cmdline` | displays the passed boot parameters. |
@@ -46,7 +46,7 @@ Vd: file `/proc/sys/net/ipv4/ip_forward`  điểu khiển việc forward IP tron
 | `/proc/version` | displays the kernel version and time of compilation. |
 | `/proc/net/dev` | displays information about each network device like packets count. |
 | `/proc/net/sockstat` | displays statistics about network socket utilization. |
-| `/proc/sys/net/ipv4/ip_ display` |  |
+| `/proc/sys/net/ipv4/ip_ display` | ... |
 | `/proc/sys/net/local_port_range` | the range of ports that Linux uses. |
 |`/proc/sys/net/ipv4/tcp_syncookies`| protection against syn flood attacks. |
 
