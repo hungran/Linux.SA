@@ -2,6 +2,10 @@
 - Bài tìm hiểu về [Filesystem]()
 
 - Virual file system là một hệ thống nằm phía trên file system, cho phép người dùng truy cập vào các loại hệ thống filesystem khác nhau. Nghĩa là bạn không thể tìm thấy bất kỳ filesystem nào trong `/etc/fstab`. Tuy nhiên, bạn vẫn sẽ tìm thấy chúng nếu gõ lệnh `mount`.
+- Restart sau mỗi lần khởi động lại máy
+- tmpfs: ứng dung vd: WinMini OS
+
+
 ## Hệ thống file /Proc
 
 - Là 1 hệ thống virtual filesystem được gắn vào thư mục `/Proc`. Không có filesystem nào thực sự tồn tại trong `/Proc`, đó là một lớp ảo để xử lý các chức năng của kernel.
